@@ -5,8 +5,10 @@ import carousel1 from "../../assets/images/carousel1.png";
 import carousel4 from "../../assets/images/carousel4.jpg";
 import carousel5 from "../../assets/images/carousel5.jpg";
 
+import { ChevronLeftIcon, ChevronRightIcon } from "@chakra-ui/icons";
 import play from "../../assets/images/Play.svg";
 import "./testimonials.scss";
+import { Center, Box } from "@chakra-ui/react";
 
 const Testimonial = () => {
   const [imgArr, setImgArr] = useState([
@@ -16,26 +18,21 @@ const Testimonial = () => {
     carousel4,
     carousel5,
   ]);
-
-  const carouselHandler = (ind) => {
-    if (ind === 2) {
-      return;
-    }
-    if (ind == 0 || ind == 1) {
-      setImgArr((arr) => {
-        const temp = [...arr];
-        const out = temp.pop();
-        temp.unshift(out);
-        return temp;
-      });
-    } else {
-      setImgArr((arr) => {
-        const temp = [...arr];
-        const out = temp.shift();
-        temp.push(out);
-        return temp;
-      });
-    }
+  const shiftLeft = () => {
+    setImgArr((arr) => {
+      const temp = [...arr];
+      const out = temp.pop();
+      temp.unshift(out);
+      return temp;
+    });
+  };
+  const shiftRight = () => {
+    setImgArr((arr) => {
+      const temp = [...arr];
+      const out = temp.shift();
+      temp.push(out);
+      return temp;
+    });
   };
 
   return (
@@ -70,17 +67,42 @@ const Testimonial = () => {
           return (
             <div className={classObj} key={ind}>
               <img className="main-img" src={val} />
-              <img
-                className="play-btn"
-                src={play}
-                onClick={() => {
-                  carouselHandler(ind);
-                }}
-              />
+              <img className="play-btn" src={play} />
             </div>
           );
         })}
       </div>
+      <Center>
+        <Box
+          bg={"gray.300"}
+          borderRadius="50%"
+          w="10"
+          marginRight={10}
+          _hover={{
+            background: "gray.200",
+            color: "orange.500",
+          }}
+          onClick={shiftLeft}
+          cursor="pointer"
+        >
+          <ChevronLeftIcon boxSize={10} />
+        </Box>
+
+        <Box
+          bg={"gray.300"}
+          borderRadius="50%"
+          w="10"
+          marginLeft={10}
+          _hover={{
+            background: "gray.200",
+            color: "orange.500",
+          }}
+          onClick={shiftRight}
+          cursor="pointer"
+        >
+          <ChevronRightIcon boxSize={10} />
+        </Box>
+      </Center>
     </div>
   );
 };
