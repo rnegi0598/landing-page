@@ -1,0 +1,33 @@
+.hero-header {
+    text-align: center;
+    margin: 40px 0;
+    .title {
+        font-size: 58px;
+        font-weight: 700;
+        letter-spacing: 0.085em;
+        color: #fdfdfd;
+    }
+    .subtitle {
+        font-weight: 400;
+        font-size: 16px;
+        letter-spacing: 0.07em;
+        color: #ffffff;
+        margin:25px auto;
+        max-width:573px;
+    }
+    button {
+        width: 217.83px;
+        height: 58.82px;
+        background: #d97122;
+        border-radius: 43.0686px;
+        color: #ffffff;
+        font-weight: 600;
+        font-size: 18px;
+        outline: none;
+        border: none;
+        cursor: pointer;
+        &:hover{
+            background-color: orange;
+        }
+    }
+}

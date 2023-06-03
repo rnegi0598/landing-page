@@ -1,0 +1,26 @@
+nav {
+    font-family: 'popp';
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 20px;
+  
+    .nav-items {
+        flex-grow: 1;
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+        line-height: 30px;
+        font-weight: 500;
+        cursor: pointer;
+        .active {
+            color: #FD9D54;
+            font-weight: 800;
+        }
+        p:hover{
+            text-decoration: underline;
+        }
+    }
+    
+}

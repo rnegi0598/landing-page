@@ -1,0 +1,15 @@
+.hero-footer {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 70px;
+    .footer-item {
+        display: flex;
+        gap: 10px;
+        width: 2;
+        width: 200px;
+        font-weight: 500;
+        font-size: 15px;
+        color: #f4f4f4;
+    }
+}
